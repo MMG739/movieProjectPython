@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <title>Home</title>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo"><a href="#">mmProject</a></div>
+    <ul class="links">
+      <li><a href="home.html">Accueil</a></li>
+      <li><a href="categories.html">Categories</a></li>
+      <li><a href="films.html">Films</a></li>
+      <li><a href="series.html">Series</a></li>
+      <li><a href="annee.html">Annee</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <!-- <a href="#" class="action_btn">Rechercher</a> -->
+    <div class="group action_btn">
+      <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+          <g>
+              <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+          </g>
+      </svg>
+      <input placeholder="Rechercher" type="search" class="input">
+    </div>
+
+
+    <div class="toggle_btn">
+      <i class="fa-solid fa-bars-staggered"></i>
+    </div>
+  </div>
+
+  <div class="dropdown_menu">
+    <li><a href="home.html">Accueil</a></li>
+    <li><a href="categories.html">Categories</a></li>
+    <li><a href="films.html">Films</a></li>
+    <li><a href="series.html">Series</a></li>
+    <li><a href="annee.html">Annee</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li>
+      <div class="group action_btn">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 24 24">
+            <g>
+                <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+            </g>
+        </svg>
+        <input placeholder="Rechercher" type="search" class="input">
+      </div>
+    </li>
+  </div>
+
+  <div class="main">
+    <div class="recommandation">
+      <div class="parent">
+        <div class="film">
+          <div class="note">5.4</div>
+          <img src="img/film1.jpg" alt="Film 1">
+          <h3>Feed Me</h3>
+          <p>2022</p>
+        </div>
+        <div class="film">
+          <div class="note">10</div>
+          <img src="img/film2.jpg" alt="Film 2">
+          <h3>Tempete</h3>
+          <p>2022</p>
+        </div>
+        <div class="film">
+          <div class="note">9.2</div>
+          <img src="img/film3.jpg" alt="Film 3">
+          <h3>Avatar : La Voie de l'eau</h3>
+          <p>2022</p>
+        </div>
+        <div class="film">
+          <div class="note">6.5</div>
+          <img src="img/film4.jpg" alt="Film 4">
+          <h3>Black Panther : Wakanda Forever</h3>
+          <p>2022</p>
+        </div>
+        <div class="film">
+          <div class="note">7.1</div>
+          <img src="img/film5.jpg" alt="Film 5">
+          <h3>Black Adam</h3>
+          <p>2022</p>
+        </div>
+        <div class="film">
+          <div class="note">7.0</div>
+          <img src="img/film6.jpg" alt="Film 6">
+          <h3></h3>Vikings: Valhalla</h3>
+          <p>2022</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const toggleBtn = document.querySelector('.toggle_btn');
+    const toggleBtnIcon = document.querySelector('.toggle_btn i');
+    const dropdownMenu = document.querySelector('.dropdown_menu');
+
+    toggleBtn.onclick = function(){
+      dropdownMenu.classList.toggle('open')
+      const isOpen = dropdownMenu.classList.contains('open')
+      
+      toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars-staggered'
+    }
+  </script>
+
+</body>
+</html>
